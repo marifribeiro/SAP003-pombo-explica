@@ -6,12 +6,26 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css?family=Lato|Satisfy&display=swap" rel="stylesheet">
     <link href="styles.css" rel = 'stylesheet'>
+    <script src="https://js.api.here.com/v3/3.1/mapsjs-core.js" type="text/javascript" charset="utf-8"></script>
+    <script src="https://js.api.here.com/v3/3.1/mapsjs-service.js" type="text/javascript" charset="utf-8"></script>
     <title>Document</title>
 </head>
 <body>
-    <h1 class="logo1">Pombo explica</h1>
-    <h1 class="logo2">Pombo explica</h1>
-    <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ac ligula quis ante facilisis feugiat. Ut eleifend, leo nec viverra ultricies, magna ante porttitor velit, sit amet scelerisque mauris erat vitae ligula. Aenean id arcu malesuada, pellentesque ligula pharetra, lobortis leo. Praesent pretium urna ut ultrices commodo. Praesent congue, erat vitae tempor ultrices, est ipsum efficitur enim, ultricies pulvinar metus augue ac sapien. Aenean libero sem, aliquam non maximus eu, vestibulum eu justo. Mauris sit amet dolor vitae dolor hendrerit ullamcorper. Aenean vitae velit tristique, elementum nulla ac, congue arcu.</p>
+    <h1 class="logo">Pombo explica</h1>
+    <form id="form">
+        <input type="text" id="address">
+        <input type="submit">
+    </form>
+    <div id="mapContainer" class="map-container"></div>
+    <p class="text">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ac ligula quis ante facilisis 
+        feugiat. Ut eleifend, leo nec viverra ultricies, magna ante porttitor velit, sit amet scelerisque mauris 
+        erat vitae ligula. Aenean id arcu malesuada, pellentesque ligula pharetra, lobortis leo. Praesent pretium 
+        urna ut ultrices commodo. Praesent congue, erat vitae tempor ultrices, est ipsum efficitur enim, ultricies 
+        pulvinar metus augue ac sapien. Aenean libero sem, aliquam non maximus eu, vestibulum eu justo. Mauris sit 
+        amet dolor vitae dolor hendrerit ullamcorper. Aenean vitae velit tristique, elementum nulla ac, congue arcu.
+     </p>
     <script src="index.js"></script>
+    <script src="form.js"></script>
 </body>
 </html>

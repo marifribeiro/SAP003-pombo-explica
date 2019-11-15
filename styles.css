@@ -1,12 +1,6 @@
-.logo1 {
+.logo {
     font-family: 'Satisfy', cursive;
     color: #F25E5E;
-    font-size: 3em;
-}
-
-.logo2 {
-    font-family: 'Satisfy', cursive;
-    color: #0396A6;
     font-size: 3em;
 }
 
@@ -14,6 +8,12 @@
     font-family: 'Lato', sans-serif;
     color: #0D0D0D;
     font-size: 1em;
+}
+
+.map-container
+{
+    width: 600px;
+    height: 600px;
 }
 
 /* Color Theme Swatches in Hex */
