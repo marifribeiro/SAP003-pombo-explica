@@ -1,3 +1,35 @@
+*{
+    margin:0;
+    padding: 0;
+}
+
+
+.lupa{
+    width: 40px;
+    height: 40px;
+    background-color: rgb(236, 230, 230); 
+    padding: 10px 10px;
+    cursor: pointer;
+    
+}
+
+#lupa:after{
+    font-family:FontAwesome;
+    font-size:14px;
+    content:"\f002"
+ }
+
+.busca:focus{
+    border: solid 2px rgb(187, 41, 66);
+}
+
+.busca{
+    width: 70%;
+    height: 40px;
+    margin: 5% 5% 5% 5%;  
+    border: solid 1px;  
+}
+
 .logo1 {
     font-family: 'Satisfy', cursive;
     color: #F25E5E;
@@ -14,7 +46,10 @@
     font-family: 'Lato', sans-serif;
     color: #0D0D0D;
     font-size: 1em;
+    margin: 5% 5% 5% 5%;
 }
+
+
 
 /* Color Theme Swatches in Hex */
 .Salmon-on-Ice-1-hex { color: #3F464D; }
