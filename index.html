@@ -1,18 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css?family=Lato|Satisfy&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://js.api.here.com/v3/3.1/mapsjs-ui.css" />
     <link href="styles.css" rel = 'stylesheet'>
-    <title>Document</title>
+    <title>Pombo explica</title>
 </head>
 <body>
     <h1 class="logo">Pombo explica</h1>
-    <p class="text">
-        teste teste
-    </p>
+    <form id="form">
+        <input type="text" id="endereco" class="endereco" placeholder="digite o endereço">
+        <input type="submit" value="buscar">
+    </form>
+    <div id="map" class="map"></div>
+        
+    <script src="https://js.api.here.com/v3/3.1/mapsjs-core.js" type="text/javascript" charset="utf-8"></script>
+    <script src="https://js.api.here.com/v3/3.1/mapsjs-service.js" type="text/javascript" charset="utf-8"></script>
+    <script src="https://js.api.here.com/v3/3.1/mapsjs-mapevents.js" type="text/javascript" charset="utf-8"></script>
+    <script src="https://js.api.here.com/v3/3.1/mapsjs-ui.js" type="text/javascript" charset="utf-8"></script>
+    
     <script src="index.js"></script>
 </body>
 </html>
