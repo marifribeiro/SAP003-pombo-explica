@@ -27,8 +27,7 @@ let geocodingParams = {
 // Define a callback function to process the geocoding response:
 let onResult = function(result) {
     let locations = result.Response.View[0].Result,
-    position,
-    marker;
+    position;
 
     // Add a marker for each location found
     for (i = 0;  i < locations.length; i++) {
@@ -36,6 +35,7 @@ let onResult = function(result) {
         lat: locations[i].Location.DisplayPosition.Latitude,
         lng: locations[i].Location.DisplayPosition.Longitude
         };
+        map.setCenter(position);
     }
 };
   
@@ -55,22 +55,14 @@ let mapEvents = new H.mapevents.MapEvents(map);
 // Add event listeners:
 map.addEventListener('tap', function(evt) {
     console.log(evt.type, evt.currentPointer.type); 
+    let bubble = new H.ui.InfoBubble({ lat: -23.55, lng: -46.65 } , {
+        content: '<b>Hello World!</b>'
+       });
+    ui.addBubble(bubble);
 });
   
 // Instantiate the default behavior, providing the mapEvents object: 
 let behavior = new H.mapevents.Behavior(mapEvents);
-
-
-//   MARCADOR E BOLHA
-
-// Add the marker to the map:
-map.addObject(marker);
-  let bubble = new H.ui.InfoBubble({ position } , {
-    content: '<b>Hello World!</b>'
-   });
-    
-// Add info bubble to the UI:
-ui.addBubble(bubble);
 
 
 ////////////////////////////////////////////
