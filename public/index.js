@@ -98,3 +98,10 @@ const search = (event) => {
 
 const form = document.getElementById('form');
 form.addEventListener('submit', search);
+
+
+
+const db = firebase.firestore()
+db.collection("monumentos").doc("anhanguera").get().then((data) => {
+    console.log(data.data().ano)
+})
