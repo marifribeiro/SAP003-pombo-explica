@@ -64,9 +64,6 @@ map.addEventListener('tap', function(evt) {
 // Instantiate the default behavior, providing the mapEvents object: 
 let behavior = new H.mapevents.Behavior(mapEvents);
 
-
-////////////////////////////////////////////
-
 const search = (event) => {
     event.preventDefault();
     const endereco = document.getElementById('endereco').value
@@ -82,6 +79,10 @@ form.addEventListener('submit', search);
 
 
 const db = firebase.firestore()
-db.collection("monumentos").doc("anhanguera").get().then((data) => {
-    console.log(data.data().ano)
-})
+db.collection("monumentos").get()
+    .then((snap) => snap.forEach((monumento) => {
+        let coords = { lat: monumento.data().local[0], lng: monumento.data().local[1] }
+        let marker = new H.map.Marker(coords);
+
+        map.addObject(marker);
+    }))
