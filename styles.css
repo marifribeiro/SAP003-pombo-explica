@@ -49,12 +49,6 @@ body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvet
     font-size: 3em;
 }
 
-.logo2 {
-    font-family: 'Satisfy', cursive;
-    color: #0396A6;
-    font-size: 3em;
-}
-
 .text {
     font-family: 'Lato', sans-serif;
     color: #0D0D0D;
@@ -62,7 +56,17 @@ body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvet
     margin: 5% 5% 5% 5%;
 }
 
+.map {
+    width: auto;
+    height: 480px;
+    border: 2px solid #2186C4;
+    padding: 1px;
+    margin: 3px;
+}
 
+.endereco {
+    background-color: rgba(255, 255, 255, 0);
+}
 
 /* Color Theme Swatches in Hex */
 .Salmon-on-Ice-1-hex { color: #3F464D; }
