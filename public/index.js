@@ -27,18 +27,15 @@ let geocodingParams = {
 // Define a callback function to process the geocoding response:
 let onResult = function(result) {
     let locations = result.Response.View[0].Result,
-    position,
-    marker;
+    position;
 
     // Add a marker for each location found
     for (i = 0;  i < locations.length; i++) {
-    position = {
-      lat: locations[i].Location.DisplayPosition.Latitude,
-      lng: locations[i].Location.DisplayPosition.Longitude
-    };
-    map.setCenter(position);
-    marker = new H.map.Marker(position);
-    map.addObject(marker);
+        position = {
+        lat: locations[i].Location.DisplayPosition.Latitude,
+        lng: locations[i].Location.DisplayPosition.Longitude
+        };
+        map.setCenter(position);
     }
 };
   
@@ -58,39 +55,20 @@ let mapEvents = new H.mapevents.MapEvents(map);
 // Add event listeners:
 map.addEventListener('tap', function(evt) {
     console.log(evt.type, evt.currentPointer.type); 
+    let bubble = new H.ui.InfoBubble({ lat: -23.55, lng: -46.65 } , {
+        content: '<b>Hello World!</b>'
+       });
+    ui.addBubble(bubble);
 });
   
 // Instantiate the default behavior, providing the mapEvents object: 
 let behavior = new H.mapevents.Behavior(mapEvents);
 
-
-//   MARCADOR E BOLHA
-
-// // Create a marker icon from an image URL:
-// let icon = new H.map.Icon('graphics/markerHouse.png');
-
-// // Create a marker using the previously instantiated icon:
-// let marker = new H.map.Marker({ lat: 52.5, lng: 13.4 }, { icon: icon });
-
-// // Add the marker to the map:
-// map.addObject(marker);
-
-
-//   let bubble = new H.ui.InfoBubble({ position } , {
-//     content: '<b>Hello World!</b>'
-//    });
-    
-// // Add info bubble to the UI:
-// ui.addBubble(bubble);
-
-
-////////////////////////////////////////////
-
 const search = (event) => {
     event.preventDefault();
     const endereco = document.getElementById('endereco').value
     geocodingParams = {
-        searchText: endereco
+        searchText: `${endereco}, São Paulo, Brazil`
     };
     map.setZoom(17);
     geocoder.geocode(geocodingParams, onResult)
@@ -100,8 +78,11 @@ const form = document.getElementById('form');
 form.addEventListener('submit', search);
 
 
-
 const db = firebase.firestore()
-db.collection("monumentos").doc("anhanguera").get().then((data) => {
-    console.log(data.data().ano)
-})
+db.collection("monumentos").get()
+    .then((snap) => snap.forEach((monumento) => {
+        let coords = { lat: monumento.data().local[0], lng: monumento.data().local[1] }
+        let marker = new H.map.Marker(coords);
+
+        map.addObject(marker);
+    }))
