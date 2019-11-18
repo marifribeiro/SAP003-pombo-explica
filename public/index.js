@@ -49,17 +49,33 @@ geocoder.geocode(geocodingParams, onResult, function(e) {
   
 
 // EVENTO
+////////////////////////////////////
+const dbCollection = firebase.firestore().collection("monumentos")
+dbCollection.get()
+    .then((snap) => snap.forEach((monumento) => {
+        const xuxu = monumento.data().nome
+        // console.log(xuxu)
+        map.addEventListener('tap', function(event) {
+            console.log('xuxu')
+            // console.log(event.type, event.currentPointer.type); 
+            let bubble = new H.ui.InfoBubble({ lat: -23.55, lng: -46.65 } , {
+                content: `<p>${xuxu}</p>`
+               });
+            ui.addBubble(bubble);
+        });
+    }))
+    
 
 let mapEvents = new H.mapevents.MapEvents(map);
 
 // Add event listeners:
-map.addEventListener('tap', function(evt) {
-    console.log(evt.type, evt.currentPointer.type); 
-    let bubble = new H.ui.InfoBubble({ lat: -23.55, lng: -46.65 } , {
-        content: '<b>Hello World!</b>'
-       });
-    ui.addBubble(bubble);
-});
+// map.addEventListener('tap', function(event) {
+//     // console.log(event.type, event.currentPointer.type); 
+//     let bubble = new H.ui.InfoBubble({ lat: -23.55, lng: -46.65 } , {
+//         content: `<p>Hello World! ${xuxu}</p>`
+//        });
+//     ui.addBubble(bubble);
+// });
   
 // Instantiate the default behavior, providing the mapEvents object: 
 let behavior = new H.mapevents.Behavior(mapEvents);
@@ -83,6 +99,7 @@ db.collection("monumentos").get()
     .then((snap) => snap.forEach((monumento) => {
         let coords = { lat: monumento.data().local[0], lng: monumento.data().local[1] }
         let marker = new H.map.Marker(coords);
+        // console.log(marker)
 
         map.addObject(marker);
     }))
