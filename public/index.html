@@ -1,37 +1,36 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://fonts.googleapis.com/css?family=Lato|Satisfy&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://js.api.here.com/v3/3.1/mapsjs-ui.css" />
-    <link href="styles.css" rel = 'stylesheet'>
-    <title>Pombo explica</title>
-  </head>
-  <body>
-      <h1 class="logo">Pombo explica</h1>
-      <form id="form">
-          <input type="text" id="endereco" class="endereco" placeholder="digite o endereço">
-          <input type="submit" value="buscar">
-      </form>
-      <div id="map" class="map"></div>
-      <!-- The core Firebase JS SDK is always required and must be listed first -->
-      <script src="/__/firebase/7.1.0/firebase-app.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Lato|Satisfy&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://js.api.here.com/v3/3.1/mapsjs-ui.css" />
+  <link href="styles.css" rel='stylesheet'>
+  <title>Pombo explica</title>
+</head>
+
+<body>
+  <h1 class="logo">Pombo explica</h1>
+  <form id="form">
+    <input type="text" id="endereco" class="endereco" placeholder="digite o endereço">
+    <input type="submit" value="buscar">
+  </form>
+  <div id="map" class="map"></div>
+
+  <script src="/__/firebase/7.1.0/firebase-app.js"></script>
+  <script src="/__/firebase/7.1.0/firebase-analytics.js"></script>
+  <script src="/__/firebase/7.1.0/firebase-auth.js"></script>
+  <script src="/__/firebase/7.1.0/firebase-firestore.js"></script>
+  <script src="/__/firebase/7.1.0/firebase-storage.js"></script>  
+  <script src="/__/firebase/init.js"></script>
+  <script src="https://js.api.here.com/v3/3.1/mapsjs-core.js" type="text/javascript" charset="utf-8"></script>
+  <script src="https://js.api.here.com/v3/3.1/mapsjs-service.js" type="text/javascript" charset="utf-8"></script>
+  <script src="https://js.api.here.com/v3/3.1/mapsjs-mapevents.js" type="text/javascript" charset="utf-8"></script>
+  <script src="https://js.api.here.com/v3/3.1/mapsjs-ui.js" type="text/javascript" charset="utf-8"></script>  
   
-      <!-- TODO: Add SDKs for Firebase products that you want to use
-          https://firebase.google.com/docs/web/setup#available-libraries -->
-      <script src="/__/firebase/7.1.0/firebase-analytics.js"></script>
-      <script src="/__/firebase/7.1.0/firebase-auth.js"></script>
-      <script src="/__/firebase/7.1.0/firebase-firestore.js"></script>
-      <script src="/__/firebase/7.1.0/firebase-storage.js"></script>
-      <!-- Initialize Firebase -->
-      <script src="/__/firebase/init.js"></script>    
-      <script src="https://js.api.here.com/v3/3.1/mapsjs-core.js" type="text/javascript" charset="utf-8"></script>
-      <script src="https://js.api.here.com/v3/3.1/mapsjs-service.js" type="text/javascript" charset="utf-8"></script>
-      <script src="https://js.api.here.com/v3/3.1/mapsjs-mapevents.js" type="text/javascript" charset="utf-8"></script>
-      <script src="https://js.api.here.com/v3/3.1/mapsjs-ui.js" type="text/javascript" charset="utf-8"></script>
-      
-      <script src="index.js"></script>
-  </body>
-  </html>
+  <script src="index.js"></script>
+</body>
+
+</html>

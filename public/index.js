@@ -1,3 +1,4 @@
+
 // Instantiate a map and platform object:
 let platform = new H.service.Platform({'apikey': 'tZhODf6mVOg1j5L7qpwf6FUaVjw2JTGUylNC2EtXc78'});
 
@@ -98,3 +99,20 @@ const search = (event) => {
 
 const form = document.getElementById('form');
 form.addEventListener('submit', search);
+
+
+// const db = firebase.firestore().collection('monumentos').on('value')
+// .then(function (snapshot) {
+//    console.log(snapshot.val())
+// })
+// const db = firebase.firestore()
+// db.collection("monumentos").get().then(function(querySnapshot) {
+//     querySnapshot.forEach(function(doc) {
+//         // doc.data() is never undefined for query doc snapshots
+//         console.log(doc.id, " => ", doc.data());
+//     });
+// });
+const db = firebase.firestore()
+db.collection('monumentos').doc("anhanguera").get().then((data) => {
+    console.log(data.data().nome)
+})
