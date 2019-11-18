@@ -22,6 +22,14 @@
 .endereco {
     background-color: rgba(255, 255, 255, 0);
 }
+.lupa {
+    margin: 5px;
+    padding: 20px;
+    background-image: url(./img/lupa.svg);
+    background-size: 20px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
 
 /* Color Theme Swatches in Hex */
 .Salmon-on-Ice-1-hex { color: #3F464D; }
