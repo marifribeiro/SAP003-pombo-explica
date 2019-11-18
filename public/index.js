@@ -1,3 +1,9 @@
+const db = firebase.firestore()
+db.collection("monumentos").doc("anhanguera").get().then((data) => {
+    console.log(data.data().ano)
+})
+
+
 // Instantiate a map and platform object:
 let platform = new H.service.Platform({'apikey': 'tZhODf6mVOg1j5L7qpwf6FUaVjw2JTGUylNC2EtXc78'});
 
@@ -57,6 +63,7 @@ let mapEvents = new H.mapevents.MapEvents(map);
 
 // Add event listeners:
 map.addEventListener('tap', function(evt) {
+
     console.log(evt.type, evt.currentPointer.type); 
 });
   
@@ -76,12 +83,12 @@ let behavior = new H.mapevents.Behavior(mapEvents);
 // map.addObject(marker);
 
 
-//   let bubble = new H.ui.InfoBubble({ position } , {
-//     content: '<b>Hello World!</b>'
-//    });
+  let bubble = new H.ui.InfoBubble({lat: -23.55, lng: -46.65 } , {
+    content: '<b>Hello World!</b>'
+   });
     
-// // Add info bubble to the UI:
-// ui.addBubble(bubble);
+// Add info bubble to the UI:
+ui.addBubble(bubble);
 
 
 ////////////////////////////////////////////
@@ -98,3 +105,4 @@ const search = (event) => {
 
 const form = document.getElementById('form');
 form.addEventListener('submit', search);
+
