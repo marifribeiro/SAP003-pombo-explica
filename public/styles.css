@@ -42,39 +42,10 @@ html,body {
     cursor: pointer;
 }
 
-.menu ul {
-    text-align: center;
-    padding: 0px;
-    margin: 0px;
-    background-color: #F25E5E;
-    list-style: none;
-}
-
 .loguinho{
     background-image: url(./img/logo-250.png);
     background-size: 20px;
 }
-
-.menu ul li {
-    display: inline;
-}
-
-.menu ul li a {
-    padding: 6px 15px;
-    display: inline-block;
-
-     visual do link 
-    background-color: #F25E5E;
-    color: #0D0D0D;
-    text-decoration: none;
-}
-
-.menu ul li a:hover {
-    background-color: rgb(247, 238, 238);
-    color: #F25E5E;
-    border-radius: 5px;
-}
-
 
 .Salmon-on-Ice-1-hex { color: #3F464D; }
 .Salmon-on-Ice-2-hex { color: #2186C4; }
