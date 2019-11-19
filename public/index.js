@@ -55,33 +55,24 @@ dbCollection.get()
     .then((snap) => snap.forEach((monumento) => {
         const name = monumento.data().nome
         const local = { lat:monumento.data().local[0], lng:monumento.data().local[1] } 
-        console.log(name)
-        map.addEventListener('tap', function(event) {
-            // console.log(event)
-            // console.log('xuxu')
-            // console.log(event.type, event.currentPointer.type); 
-            let bubble = new H.ui.InfoBubble(local,
+
+        map.addEventListener('tap', function (evt) {
+            const coordenadas = evt.target.getGeometry()
+            if (coordenadas.lat == local.lat && coordenadas.lng == local.lng) {
+                let bubble =  new H.ui.InfoBubble(
+                    local,                
                 {
                     content: `<p>${name}</p>`
                 }
                 );
-            ui.addBubble(bubble);
-        });
-    }))
+                ui.addBubble(bubble);            }
+        }, false);
+        })
+    );
     
 
 let mapEvents = new H.mapevents.MapEvents(map);
 
-// Add event listeners:
-// map.addEventListener('tap', function(event) {
-//     // console.log(event.type, event.currentPointer.type); 
-//     let bubble = new H.ui.InfoBubble({ lat: -23.55, lng: -46.65 } , {
-//         content: `<p>Hello World! ${xuxu}</p>`
-//        });
-//     ui.addBubble(bubble);
-// });
-  
-// Instantiate the default behavior, providing the mapEvents object: 
 let behavior = new H.mapevents.Behavior(mapEvents);
 
 const search = (event) => {
@@ -103,7 +94,6 @@ db.collection("monumentos").get()
     .then((snap) => snap.forEach((monumento) => {
         let coords = { lat: monumento.data().local[0], lng: monumento.data().local[1] }
         let marker = new H.map.Marker(coords);
-        // console.log(marker)
 
         map.addObject(marker);
     }))
