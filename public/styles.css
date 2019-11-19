@@ -56,10 +56,15 @@
     line-height: 1.6em;
 }
 
-.more {
+.more a{
     color: #2186C4;
     font-family: lato, sans-serif;
     font-size: 1.1em;
+    text-decoration: none;
+}
+
+.history {
+    display: none;
 }
 
 /* Color Theme Swatches in Hex */

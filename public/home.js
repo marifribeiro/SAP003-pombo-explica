@@ -30,6 +30,15 @@ window.onload = function () {
     userLocation();
 }
 
+const bubbleTemplate = props => {
+    return  `
+    <img src="${props.img}" class="image">
+    <p class="name">${props.name}</p>
+    <p class="address">${props.address}</p>
+    <p class="more"><a href="${props.link}">Saiba mais</p>
+    `
+}
+
 // firebase
 
 const dbCollection = firebase.firestore().collection("monumentos")
@@ -40,21 +49,29 @@ dbCollection.get()
         const name = monument.data().nome;
         const address = monument.data().endereço;
         const img = monument.data().imagem;
-                
+        const link = monument.data().link;
+
         map.addObject(marker);
         map.addEventListener('tap', function (evt) {
             const coords = evt.target.getGeometry()
             if (coords.lat == local.lat && coords.lng == local.lng) {
-                const bubble =  new H.ui.InfoBubble(local, { content: window.bubble.Bubble({
+                const bubble =  new H.ui.InfoBubble(local, { content: bubbleTemplate({
                     img,
                     name, 
                     address, 
+                    link,
                 })});
             ui.addBubble(bubble); 
             };
         }, false);
-    }));
-    
+    }))
+
+window.onload = () => { setTimeout(loadHistory, 10000) }
+
+const loadHistory = () => {
+    const more = document.querySelector('#more');
+    more.addEventListener('click', () => alert('funciona'))
+}
 
 window.index = {
     setNewCenter
