@@ -34,16 +34,20 @@ window.onload = function () {
 
 const dbCollection = firebase.firestore().collection("monumentos")
 dbCollection.get()
-    .then((snap) => snap.forEach((monumento) => {
-        const local = { lat:monumento.data().local[0], lng:monumento.data().local[1] } 
+    .then((snap) => snap.forEach((monument) => {
+        const local = { lat: monument.data().local[0], lng: monument.data().local[1] } 
         const marker = new H.map.Marker(local);
-        const name = monumento.data().nome
+        const name = monument.data().nome;
+        const address = monument.data().endereço;
                 
         map.addObject(marker);
         map.addEventListener('tap', function (evt) {
-            const coordenadas = evt.target.getGeometry()
-            if (coordenadas.lat == local.lat && coordenadas.lng == local.lng) {
-                const bubble =  new H.ui.InfoBubble( local, { content: `<p>${name}</p>` });
+            const coords = evt.target.getGeometry()
+            if (coords.lat == local.lat && coords.lng == local.lng) {
+                const bubble =  new H.ui.InfoBubble(local, { content: window.bubble.Bubble({
+                    name, 
+                    address, 
+                })});
             ui.addBubble(bubble); 
             };
         }, false);
