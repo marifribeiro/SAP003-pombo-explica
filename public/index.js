@@ -31,11 +31,10 @@ let onResult = function(result) {
 
     // Add a marker for each location found
     for (i = 0;  i < locations.length; i++) {
-        position = {
-        lat: locations[i].Location.DisplayPosition.Latitude,
-        lng: locations[i].Location.DisplayPosition.Longitude
-        };
-        map.setCenter(position);
+        setNewCenter(
+            locations[i].Location.DisplayPosition.Latitude, 
+            locations[i].Location.DisplayPosition.Longitude
+        )
     }
 };
   
@@ -47,6 +46,30 @@ geocoder.geocode(geocodingParams, onResult, function(e) {
     alert(e);
 });
   
+// localização atual
+
+const setNewCenter = (lat, long) => {
+    position = {
+        lat: lat,
+        lng: long
+        };
+    map.setCenter(position);
+    return position;
+}
+const callback = (position) => {
+    setNewCenter(position.coords.latitude, position.coords.longitude)
+}
+
+const meulocal = () => {
+    console.log('oi');
+    navigator.geolocation.getCurrentPosition(callback)
+}
+//  onload(meulocal)
+document.getElementById('local').addEventListener('click', meulocal)
+
+
+
+
 
 // EVENTO
 ////////////////////////////////////
