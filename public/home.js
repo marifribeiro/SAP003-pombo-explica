@@ -39,12 +39,14 @@ dbCollection.get()
         const marker = new H.map.Marker(local);
         const name = monument.data().nome;
         const address = monument.data().endereço;
+        const img = monument.data().imagem;
                 
         map.addObject(marker);
         map.addEventListener('tap', function (evt) {
             const coords = evt.target.getGeometry()
             if (coords.lat == local.lat && coords.lng == local.lng) {
                 const bubble =  new H.ui.InfoBubble(local, { content: window.bubble.Bubble({
+                    img,
                     name, 
                     address, 
                 })});
