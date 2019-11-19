@@ -20,7 +20,7 @@ const search = (event) => {
     geocoder.geocode(geocodingParams, onResult)
 }
 
-const form = document.getElementById('form');
-form.addEventListener('submit', search);
+const form = document.querySelector('.lupa');
+form.addEventListener('click', search);
 
 const geocoder = platform.getGeocodingService();

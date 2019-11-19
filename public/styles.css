@@ -1,4 +1,3 @@
-
 html,body {
     padding: 0;
     margin: 0;
@@ -8,15 +7,17 @@ html,body {
     display: none;
 } 
 
- .xuxu {
-    text-align: center;
+.logo {
     font-family: 'Satisfy', cursive;
     color: #F25E5E;
     font-size: 2em;
 } 
 
+.image {
+    width: 100px;
+}
 
- .text {
+.text {
     font-family: 'Lato', sans-serif;
     color: #0D0D0D;
     font-size: 1em;
@@ -38,12 +39,7 @@ html,body {
 }
 
 .lupa {
-    margin: 5px;
-    padding: 20px;
-    background-image: url(./img/lupa.svg);
-    background-size: 20px;
-    background-position: center;
-    background-repeat: no-repeat;
+    cursor: pointer;
 }
 
 .menu ul {
@@ -97,95 +93,3 @@ html,body {
 .color-3-hex { color: #04BFAD; }
 .color-4-hex { color: #F28963; }
 .color-5-hex { color: #F25E5E; }
-
-@media (max-width:480px) { /* smartphones, Android phones, landscape iPhone */
-
-    .logo {
-        text-align: center;
-        font-family: 'Satisfy', cursive;
-        color: #F25E5E;
-        font-size: 3em;
-    }
-    
-    .text {
-        font-family: 'Lato', sans-serif;
-        color: #0D0D0D;
-        font-size: 1em;
-    }
-    
-    .map {
-        width: auto;
-        height: 480px;
-        border: 2px solid #2186C4;
-        padding: 1px;
-        margin: 3px;
-    }
-    
-    .endereco {
-        background-color: rgba(255, 255, 255, 0);
-        
-    }        
-
-    .busca-input{
-        display: flex;
-        justify-content: center;
-    } 
-   
-    .lupa {
-      
-        background-image: url(./img/lupa.svg);        
-        background-position: center;
-        background-repeat: no-repeat;
-        background-color: transparent;
-        border-color: #F25E5E;
-        height: 50px;      
-    }  
-     
-    .menu ul {
-        text-align: center;
-        padding: 0px;
-        margin: 0px;
-        background-color: #F25E5E;
-        list-style: none;
-    }
-    
-    .menu ul li {
-        display: inline;
-    }
-    
-    .menu ul li a {
-        padding: 6px 15px;
-        display: inline-block;       
-        background-color: #F25E5E;
-        color: #0D0D0D;
-        text-decoration: none;
-    }
-    
-    .menu ul li a:hover {
-        background-color: rgb(247, 238, 238);
-        color: #F25E5E;
-        border-radius: 5px;
-    }
-    
-    
-    .Salmon-on-Ice-1-hex { color: #3F464D; }
-    .Salmon-on-Ice-2-hex { color: #2186C4; }
-    .Salmon-on-Ice-3-hex { color: #7ECEFC; }
-    .Salmon-on-Ice-4-hex { color: #FFF6E6; }
-    .Salmon-on-Ice-5-hex { color: #FF8066; }
-    
-   
-    .Smokey-Sunrise-1-hex { color: #5F6B73; }
-    .Smokey-Sunrise-2-hex { color: #0D0D0D; }
-    .Smokey-Sunrise-3-hex { color: #C1D2D9; }
-    .Smokey-Sunrise-4-hex { color: #D8D9CC; }
-    
-    
-    .color-1-hex { color: #024873; }
-    .color-2-hex { color: #0396A6; }
-    .color-3-hex { color: #04BFAD; }
-    .color-4-hex { color: #F28963; }
-    .color-5-hex { color: #F25E5E; }
-
-
-} 
