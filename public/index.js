@@ -53,14 +53,18 @@ geocoder.geocode(geocodingParams, onResult, function(e) {
 const dbCollection = firebase.firestore().collection("monumentos")
 dbCollection.get()
     .then((snap) => snap.forEach((monumento) => {
-        const xuxu = monumento.data().nome
-        // console.log(xuxu)
+        const name = monumento.data().nome
+        const local = monumento.data().local
+        console.log(local)
         map.addEventListener('tap', function(event) {
-            console.log('xuxu')
+            // console.log('xuxu')
             // console.log(event.type, event.currentPointer.type); 
-            let bubble = new H.ui.InfoBubble({ lat: -23.55, lng: -46.65 } , {
-                content: `<p>${xuxu}</p>`
-               });
+            let bubble = new H.ui.InfoBubble({
+                lat: `<p>${local}</p>`
+                } ,
+                { //lat: -23.55, lng: -46.65
+                    content: `<p>${name}</p>`
+                });
             ui.addBubble(bubble);
         });
     }))
