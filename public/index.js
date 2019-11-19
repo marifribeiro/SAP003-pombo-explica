@@ -54,17 +54,17 @@ const dbCollection = firebase.firestore().collection("monumentos")
 dbCollection.get()
     .then((snap) => snap.forEach((monumento) => {
         const name = monumento.data().nome
-        const local = monumento.data().local
-        console.log(local)
+        const local = { lat:monumento.data().local[0], lng:monumento.data().local[1] } 
+        console.log(name)
         map.addEventListener('tap', function(event) {
+            // console.log(event)
             // console.log('xuxu')
             // console.log(event.type, event.currentPointer.type); 
-            let bubble = new H.ui.InfoBubble({
-                lat: `<p>${local}</p>`
-                } ,
-                { //lat: -23.55, lng: -46.65
+            let bubble = new H.ui.InfoBubble(local,
+                {
                     content: `<p>${name}</p>`
-                });
+                }
+                );
             ui.addBubble(bubble);
         });
     }))
