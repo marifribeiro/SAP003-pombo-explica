@@ -50,7 +50,7 @@ dbCollection.get()
         const address = monument.data().endereço;
         const img = monument.data().imagem;
         const link = monument.data().link;
-                
+
         map.addObject(marker);
         map.addEventListener('tap', function (evt) {
             const coords = evt.target.getGeometry()
