@@ -1,8 +1,31 @@
+html,body {
+    padding: 0;
+    margin: 0;
+}
+
+.busca-input {
+    margin: 30px;
+}
+
+.sobre {
+    margin: 100px;
+}
+.responsive {
+    display: none;
+} 
+
 .logo {
-    text-align: center;
     font-family: 'Satisfy', cursive;
     color: #F25E5E;
-    font-size: 3em;
+    font-size: 2em;
+}
+
+.preto {
+    color: #0D0D0D;
+}
+
+.image {
+    width: 100px;
 }
 
 .text {
@@ -21,6 +44,9 @@
 
 .endereco {
     background-color: rgba(255, 255, 255, 0);
+    width: 300px;
+    height: 50px;
+    margin-top: 20px;
 }
 
 .image {
@@ -28,12 +54,12 @@
 }
 
 .lupa {
-    margin: 5px;
-    padding: 20px;
-    background-image: url(./img/lupa.svg);
+    cursor: pointer;
+}
+
+.loguinho{
+    background-image: url(./img/logo-250.png);
     background-size: 20px;
-    background-position: center;
-    background-repeat: no-repeat;
 }
 
 .H_ib_content {
@@ -74,13 +100,12 @@
 .Salmon-on-Ice-4-hex { color: #FFF6E6; }
 .Salmon-on-Ice-5-hex { color: #FF8066; }
 
-/* Color Theme Swatches in Hex */
 .Smokey-Sunrise-1-hex { color: #5F6B73; }
 .Smokey-Sunrise-2-hex { color: #0D0D0D; }
 .Smokey-Sunrise-3-hex { color: #C1D2D9; }
 .Smokey-Sunrise-4-hex { color: #D8D9CC; }
 
-/* Color Theme Swatches in Hex */
+
 .color-1-hex { color: #024873; }
 .color-2-hex { color: #0396A6; }
 .color-3-hex { color: #04BFAD; }
