@@ -3,6 +3,13 @@ html,body {
     margin: 0;
 }
 
+.busca-input {
+    margin: 30px;
+}
+
+.sobre {
+    margin: 100px;
+}
 .responsive {
     display: none;
 } 
@@ -11,7 +18,11 @@ html,body {
     font-family: 'Satisfy', cursive;
     color: #F25E5E;
     font-size: 2em;
-} 
+}
+
+.preto {
+    color: #0D0D0D;
+}
 
 .image {
     width: 100px;

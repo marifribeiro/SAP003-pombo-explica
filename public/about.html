@@ -13,49 +13,60 @@
     <title>Pombo explica</title>
 </head>
 
-<body>    
+<body>
 
-    <nav class="navbar navbar-light navbar-1 white navbar-expand-lg justify-content-between">
-  
-        <a class="navbar-brand xuxu" href="#">
-            <img src="./img/logo-250.png" width="40" height="40" class="d-inline-block align-top" alt="">
-            Pombo explica
-        </a>
-
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent15"
-            aria-controls="navbarSupportedContent15" aria-expanded="false" aria-label="Toggle navigation"><span
-                class="navbar-toggler-icon"></span></button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent15">
-
-            <ul class="navbar-nav mr-auto">
+    <nav class="navbar navbar-expand-md navbar-light bg-light">
+        <a class="navbar-brand logo" href="#">
+            <img src="./img/logo-250.png" width="50" height="50" class="d-inline-block align-top" alt="">Pombo
+            Explica</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item active">
                     <a class="nav-link" href="about.html">Sobre</a>
                 </li>
-            </ul>       
+            </ul>
+        </div>
+    </nav>
 
-        </div>       
-
-    </nav> 
     <main>
-        <h1>Sobre nós</h1>
-        <p>
-                Pombo explica é uma plataforma que fornece informações sobre monumentos históricos na cidade de São Paulo/SP. A proposta da plataforma é incentivar as pessoas a conhecer a história da cidade, fornecendo informações de fontes confiáveis, de forma prática, centralizada e em tempo real.
-        </p>
+        <div class="sobre">
+            <h1 class="logo preto">Sobre nós</h1>
+            <p class="sobre">Pombo explica é uma plataforma que fornece informações sobre monumentos
+                históricos na cidade de São Paulo/SP. A proposta da plataforma é incentivar as pessoas
+                a conhecer a história da cidade, fornecendo informações de fontes confiáveis, de forma
+                prática, centralizada e em tempo
+            </p>
+        </div>
+
     </main>
 
+
+
+    <script src="/__/firebase/7.1.0/firebase-app.js"></script>
+    <script src="/__/firebase/7.1.0/firebase-firestore.js"></script>
+    <script src="/__/firebase/7.1.0/firebase-storage.js"></script>
+    <script src="/__/firebase/init.js"></script>
+    <script src="https://js.api.here.com/v3/3.1/mapsjs-core.js" type="text/javascript" charset="utf-8"></script>
+    <script src="https://js.api.here.com/v3/3.1/mapsjs-service.js" type="text/javascript" charset="utf-8"></script>
+    <script src="https://js.api.here.com/v3/3.1/mapsjs-mapevents.js" type="text/javascript" charset="utf-8"></script>
+    <script src="https://js.api.here.com/v3/3.1/mapsjs-ui.js" type="text/javascript" charset="utf-8"></script>
+
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
 
     <script src="index.js"></script>
     <script src="search.js"></script>
