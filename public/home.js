@@ -5,7 +5,7 @@ const map = new H.Map(
     defaultLayers.vector.normal.map,
         {
             zoom: 12,
-            center: { lat: -23.55, lng: -46.65 }
+            // center: { lat: -23.55, lng: -46.65 }
         }
 );
 const ui = H.ui.UI.createDefault(map, defaultLayers, 'pt-BR'); 
@@ -30,15 +30,6 @@ window.onload = function () {
     userLocation();
 }
 
-const bubbleTemplate = props => {
-    return  `
-    <img src="${props.img}" class="image">
-    <p class="name">${props.name}</p>
-    <p class="address">${props.address}</p>
-    <p class="more"><a href="${props.link}">Saiba mais</p>
-    `
-}
-
 // firebase
 
 const dbCollection = firebase.firestore().collection("monumentos")
@@ -55,7 +46,7 @@ dbCollection.get()
         map.addEventListener('tap', function (evt) {
             const coords = evt.target.getGeometry()
             if (coords.lat == local.lat && coords.lng == local.lng) {
-                const bubble =  new H.ui.InfoBubble(local, { content: bubbleTemplate({
+                const bubble =  new H.ui.InfoBubble(local, { content: window.bubble.Bubble({
                     img,
                     name, 
                     address, 
@@ -65,13 +56,6 @@ dbCollection.get()
             };
         }, false);
     }))
-
-window.onload = () => { setTimeout(loadHistory, 10000) }
-
-const loadHistory = () => {
-    const more = document.querySelector('#more');
-    more.addEventListener('click', () => alert('funciona'))
-}
 
 window.index = {
     setNewCenter

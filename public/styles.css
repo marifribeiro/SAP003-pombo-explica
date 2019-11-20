@@ -8,24 +8,26 @@ html,body {
 }
 
 .sobre {
-    margin: 100px;
+    margin: 2em
 }
-.responsive {
-    display: none;
-} 
 
 .logo {
     font-family: 'Satisfy', cursive;
     color: #F25E5E;
-    font-size: 2em;
+    font-size: 1.3em;
 }
 
-.preto {
-    color: #0D0D0D;
+.logo-img {
+    width: 40px;
+    padding-right: 5px; 
 }
 
 .image {
     width: 100px;
+}
+
+.title {
+    font-size: 1.7em;
 }
 
 .text {
@@ -50,7 +52,8 @@ html,body {
 }
 
 .image {
-    width: 100px;
+    width: 100%;
+    padding-top: 1em;
 }
 
 .lupa {
@@ -87,10 +90,6 @@ html,body {
     font-family: lato, sans-serif;
     font-size: 1.1em;
     text-decoration: none;
-}
-
-.history {
-    display: none;
 }
 
 /* Color Theme Swatches in Hex */
