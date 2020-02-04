@@ -30,6 +30,7 @@ Neste projeto utilizamos JavaScript (ES6), HTML, CSS, Bootstrap a para localiza�
 Você pode acessar a aplicação através desse link: [https://developer.here.com/](https://pombo-explica.web.app/).
 
 Primeiro, autorize o acesso à sua localização pelo site.
+
 ![Peek 2020-02-04 19-18](https://user-images.githubusercontent.com/45573073/73792515-398c3800-4783-11ea-8ebf-e99dbf668fbf.gif)
 
 Digite um endereço no campo de busca e clique na lupa, os monumentos serão indicados por um pin azul.
